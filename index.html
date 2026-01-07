@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+  <title>Solstice pod Quick Connect Guide</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- HOME VIEW -->
+    <div id="home-view" class="content active">
+      <div class="header">
+        <h1> Solstice Pod Quick Connect</h1>
+        <div class="subtitle">Pick your device</div>
+      </div>
+
+      <div class="alert">
+        <div><strong>Step 0:</strong> Connect to the <span class="kbd">UC_Secure</span> Wi-Fi</div>
+      </div>
+
+      <div class="main-buttons">
+        <button class="main-btn" onclick="showGuide('windows')">
+          <span class="icon">🪟</span>
+          <span class="label">I’m using a Windows laptop</span>
+          <span class="sub">Dell / HP / Lenovo / Surface, etc.</span>
+        </button>
+
+        <button class="main-btn" onclick="showGuide('mac')">
+          <span class="icon">🍎</span>
+          <span class="label">I’m using a MacBook</span>
+          <span class="sub">IOS Devices</span>
+        </button>
+
+         <button class="main-btn" onclick="showGuide('mobile')">
+    <span class="icon">📱</span>
+    <span class="label">I’m using a phone / tablet</span>
+    <span class="sub">iPhone / iPad / Android</span>
+  </button>
+  <button class="main-btn" onclick="showGuide('ppt')">
+  <span class="icon">📊</span>
+  <span class="label">Present PowerPoint</span>
+  <span class="sub">Slides on screen, notes on laptop</span>
+</button>
+
+
+      </div>
+
+      <!-- FAQ SECTION -->
+      <div class="faq-section">
+        <div class="faq-title">❓ Frequently Asked Questions</div>
+
+        <!-- Faculty-open-most FAQs first -->
+
+         <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">How do I show slides on the screen while keeping notes on my laptop?</div>
+          <div class="faq-answer">
+<strong>Windows:</strong> Make sure you turn on <strong>Extended Presentation Mode</strong> in the Mersive app Settings → Control.
+<a href="javascript:void(0)" onclick="goToWindowsStep2()" class="inline-link">See Important step</a>
+
+            <strong>Mac:</strong> Use AirPlay and choose extend display if needed.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">Why can’t I find my app in the App list?</div>
+          <div class="faq-answer">
+            Your app must be <strong>OPEN and NOT minimized</strong>. Bring it to the foreground, then try again.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">Why isn’t my audio working?</div>
+          <div class="faq-answer">
+ Settings → Control → turn <strong>Auto Share Audio</strong> ON.(For Windows & IOS)
+<a href="#" onclick="goToWindowsStep2()" class="inline-link">Look Step 2</a><br/>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">Desktop vs App Window — which should I choose?</div>
+          <div class="faq-answer">
+            Choose <strong>App Window</strong> if you want to share a specific application instead of entire screen (ex:PowerPoint/Browser).
+            Choose <strong>Desktop</strong> if you want to show your entire screen.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">Where do I find the room IP and screen key?</div>
+          <div class="faq-answer">
+            Both are shown on the classroom display. The IP looks like <strong>10.x.x.x</strong> and the screen key is a <strong>4-digit code</strong>.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">Do I need to reconnect every time?</div>
+          <div class="faq-answer">
+            You’ll connect each session using the <strong>4-digit key(EVERY TIME)</strong>, but installs/drivers, entering IP address are one-time.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">Do I need to install drivers every time?</div>
+          <div class="faq-answer">
+            No — driver installation is <strong>one-time</strong>. You only do it during initial setup.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WINDOWS VIEW -->
+    <div id="windows-view" class="content">
+      <button class="back-btn" onclick="showHome()">← Back to Home</button>
+
+      <!-- Panic Path -->
+      <div class="panic">
+        <div class="panic-title">Fastest way to get on the screen (Windows)</div>
+        <div class="panic-steps">
+          <div class="panic-step"><b>1)</b> Open <b>the Mersive app</b></div>
+          <div class="panic-step"><b>2)</b> Enter <b>Room IP</b> + <b>4-digit key</b></div>
+          <div class="panic-step"><b>3)</b> Click <b>Start sharing by selecting </b> Desktop/App Window</div>
+        </div>
+        <div class="panic-note">If something doesn’t show up, ensure you open the app that you've planned to share (don’t minimize it).</div>
+      </div>
+
+      <div class="card">
+        <!-- PHASE 3 FIRST (faculty behavior): How to Share -->
+        <div class="phase-section" data-phase="share">
+          <div class="phase-header" onclick="togglePhase(this)">
+            <div class="phase-title-wrap">
+              <div class="phase-number share">3</div>
+              <div class="phase-title">How to share (most common)</div>
+            </div>
+            <div class="phase-arrow">▼</div>
+          </div>
+
+          <div class="phase-content">
+            <div class="step-desc" style="margin-bottom:16px;font-size:16px">
+              After you enter the <b>Room IP</b> + <b>4-digit key</b>, choose one option below:
+            </div>
+
+            <div class="share-options">
+                 <div class="share-card">
+                <div class="icon">🖥️</div>
+                <h4>Share everything on my screen</h4>
+                <div class="desc">This is <b>Desktop</b>. Everything is visible (including notifications).</div>
+                <div class="best">✅ Best when switching between many apps</div>
+              </div>
+
+              <div class="share-card">
+                <div class="icon">🪟</div>
+                <h4>Share specific application </h4>
+                <div class="desc">This is <b>App Window</b>. Students only see that one app.</div>
+                <div class="best">✅ Best for lectures & Zoom classes</div>
+              </div>
+
+             
+
+              <div class="share-card">
+                <div class="icon">🎬</div>
+                <h4>Play a video / image file</h4>
+                <div class="desc">This is <b>Media File</b>. Great for a single video or image.</div>
+                <div class="best">✅ Best for reliable video playback</div>
+              </div>
+            </div>
+
+            <div class="step" style="margin-top:30px">
+              <h3>🪟 App Window (share one app)</h3>
+              <ol>
+                <li><b>Open the app you planned to share in class</b> (PowerPoint/Browser/PDF)</li>
+                <li>Keep it <b>visible</b> (not minimized)</li>
+                <li>In the Mersive app, click <b>App Window</b> → select your app</li>
+              </ol>
+
+              <div class="danger">
+                <strong>If your app is minimized, it will NOT appear in the list.</strong> Open it and keep it visible, then try again.
+              </div>
+
+              <img src="Images/list.png" alt="App list (App Window)" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+
+              <div class="tip">
+                <strong>Quick win:</strong> Open the apps you plan to show before connecting. Then App Window shows them immediately.
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step">
+  <h3>🔄 Switching between multiple apps (App Window)</h3>
+
+  <div class="step-desc">
+    App Window does <strong>NOT</strong> switch automatically when you change apps on your laptop.
+    You must add each application to the Mersive app and then switch using the preview inside the Mersive app.
+  </div>
+
+  <div class="danger">
+    <strong>Very important:</strong> All applications you want to share must be <strong>OPEN and NOT minimized</strong>.
+    Minimized apps may not appear in the App Window list.
+  </div>
+
+  <ol>
+    <li><b>Open all apps</b> you plan to show (slides, browser, documents, videos, etc.)</li>
+
+    <li>In the Mersive app, click <b>App Window</b> → select the <b>first app</b><br/>
+      <span style="color: var(--muted); font-weight:650;">
+        ✅ That app starts sharing on the classroom screen
+      </span>
+    </li>
+
+    <li>When you want to show something else:<br/>
+      go back to the Mersive → click <b>App Window</b> again → select another app
+    </li>
+
+    <li>Each app you select is <b>added</b> to the Mersive (you do NOT lose the previous one)</li>
+
+    <li>Inside the Mersive app, you’ll see <b>small preview tiles</b> for all selected apps</li>
+
+    <li>Click any preview tile to <b>switch instantly</b> between apps on the classroom screen</li>
+                  <img src="Images/switch.png" alt="App list (App Window)" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+
+  </ol>
+
+  <div class="tip">
+    <strong>Good to know:</strong> You can add multiple apps first, then switch between them anytime
+    without reconnecting or re-entering the room code.
+  </div>
+
+  <div class="warning">
+    <strong>If something doesn’t appear on the current running apps list:</strong> Make sure the app is open, visible,
+    and not minimized — then click App Window again.
+  </div>
+
+  <div class="success">
+    If students can see the correct app on the screen, you’re doing it right — no extra steps needed.
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 2: Important Settings -->
+        <div class="phase-section" data-phase="config">
+          <div class="phase-header" onclick="togglePhase(this)">
+            <div class="phase-title-wrap">
+              <div class="phase-number config">2</div>
+              <div class="phase-title">Important step</div>
+            </div>
+            <div class="phase-arrow">▼</div>
+          </div>
+
+          <div class="phase-content">
+            <div class="step">
+              <h3>Enable Auto Share Audio <span class="badge required">Required for sound</span></h3>
+              <ol>
+                <li>Click <b>Settings ⚙️</b> (bottom-left)</li>
+                <li>Go to <b>Control</b></li>
+                <li>Turn <b>AUTO SHARE AUDIO</b> <b>ON ✅</b></li>
+              </ol>
+              <div class="warning">If there’s no sound in class, this is the first thing to check.</div>
+              <img src="Images/Audio.png" alt="Auto Share Audio toggle" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+            </div>
+
+            <div class="step">
+              <h3>Install Room Camera + Mic Drivers (one time)</h3>
+              <ol>
+                <li>Go to <b>Room Camera + Mic</b></li>
+                <li>Click <b>Install Drivers</b></li>
+                <li>Accept terms → click <b>Next</b></li>
+                <li>When Windows asks for permission, <b>CLICK YES</b></li>
+              </ol>
+              <img src="Images/rc.png" alt="Install drivers" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+            </div>
+
+            <div class="step">
+              <h3>Enable Extended Presentation Mode <span class="badge required">For PPT notes</span></h3>
+              <ol>
+                <li>This option will be visible only after you install room+camera drivers</li>
+                <li>Settings → <b>Control</b></li>
+                <li>Turn <b>Extended Presentation Mode</b> <b>ON ✅</b></li>
+              </ol>
+              <div class="tip">Slides go to the room screen; your notes stay on your laptop.</div>
+              <img src="Images/EP.png" alt="Extended Presentation Mode toggle" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+            </div>
+
+            <div class="success">
+              From now on: Open the Mersive → IP → 4-digit key → share 🎉
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 1: Installation -->
+        <div class="phase-section" data-phase="install">
+          <div class="phase-header" onclick="togglePhase(this)">
+            <div class="phase-title-wrap">
+              <div class="phase-number install">1</div>
+              <div class="phase-title">First-time install (only once)</div>
+            </div>
+            <div class="phase-arrow">▼</div>
+          </div>
+
+          <div class="phase-content">
+            <div class="step">
+              <h3>Download the Mersive Solstice App</h3>
+              <ol>
+                <li>Open <b>Chrome/Edge</b></li>
+                <li>Search <span class="kbd">Mersive Solstice</span> and open the official website</li>
+              </ol>
+              <img src="Images/url.png" alt="Search/URL" style="width:100%; border-radius:3px; border:1px solid rgba(255,255,255,.1); margin-top:8px;">
+              <ol start="3">
+                <li>Click <b>Download Now</b></li>
+                <li>Select <b>Windows (.msi)</b></li>
+              </ol>
+              <img src="Images/website.png" alt="Windows msi download" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+            </div>
+
+            <div class="step">
+              <h3>Install the App <span class="badge important">Don’t skip</span></h3>
+              <ol>
+                <li>Open the downloaded file</li>
+                <li>Click <b>Next</b> → <b>Accept Terms</b></li>
+                <li>When Windows asks for permission, <b>click YES</b></li>
+              </ol>
+              <div class="warning">Permission prompt must be approved or the app won’t install correctly.</div>
+            </div>
+
+            <div class="step">
+              <h3>First time opening</h3>
+              <ol>
+                <li>Open <b>the Mersive</b></li>
+                <li>Name: enter your first name</li>
+                <li>Skip calendars if prompted</li>
+                <li>Enter <b>Room IP</b> + <b>4-digit key</b> (shown on the display)</li>
+              </ol>
+              <img src="Images/app.jpeg" alt="Solstice connect screen" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MAC VIEW -->
+    <div id="mac-view" class="content">
+      <button class="back-btn" onclick="showHome()">← Back to Home</button>
+
+      <!-- Panic Path -->
+      <div class="panic">
+        <div class="panic-title">Fastest way to get on the screen (Mac)</div>
+        <div class="panic-steps">
+          <div class="panic-step"><b>1)</b> Open <b>Mersive Solstice app</b> → enter <b>IP address and hit Enter + type in the 4-digit screen key.</b></div>
+          <div class="panic-step"><b>2)</b><b>That's it don't click or share anything in app, just minimise the Mersive app</b></div>
+          <div class="panic-step"><b>3)</b> Open <b>Control Center</b></div>
+          <div class="panic-step"><b>4)</b> <b>Screen Mirroring</b> → pick the classroom display</div>
+        </div>
+        <div class="panic-note">Mac sharing is done via <b>AirPlay</b> (not inside the Mersive app).</div>
+        <div class="panic-note">If the classroom screen isn't showing in the screen mirror list then ensure you have <b>connected</b> succefully in the <b>Mersive APP</b> first.</div>
+      </div>
+
+      <div class="card">
+
+        <!-- PHASE 2 -->
+        <div class="phase-section" data-phase="config">
+          <div class="phase-header" onclick="togglePhase(this)">
+            <div class="phase-title-wrap">
+              <div class="phase-number config">2</div>
+              <div class="phase-title">Important</div>
+            </div>
+            <div class="phase-arrow">▼</div>
+          </div>
+
+          <div class="phase-content">
+    
+            <div class="step">
+              <h3>Enable Auto Share Audio <span class="badge required">If sound needed</span></h3>
+              <ol>
+                <li>Mersive app → <b>Settings ⚙️</b></li>
+                <li><b>Control</b> → turn <b>Auto Share Audio</b> ON ✅</li>
+              </ol>
+              <img src="Images/Audio.png" alt="Auto Share Audio toggle" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+            </div>
+
+            <div class="step">
+              <h3>Install Room Camera + Mic Drivers (one time)</h3>
+              <ol>
+                <li>Mersive app → <b>Room Camera + Mic</b></li>
+                <li>Click <b>Install Drivers</b></li>
+                <li>Accept terms → <b>Next</b> → <b>Allow</b> until installed</li>
+              </ol>
+              <div class="warning">
+                If you don’t see “Room Camera + Mic”, connect to the room (IP + key) first, then reopen Mersive app.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 1 -->
+        <div class="phase-section" data-phase="install">
+          <div class="phase-header" onclick="togglePhase(this)">
+            <div class="phase-title-wrap">
+              <div class="phase-number install">1</div>
+              <div class="phase-title">First-time install (only once)</div>
+            </div>
+            <div class="phase-arrow">▼</div>
+          </div>
+
+          <div class="phase-content">
+            <div class="step">
+              <h3>Download the Mersive Solstice App</h3>
+              <ol>
+                <li>Search <span class="kbd">Mersive Solstice</span> and open the official website</li>
+              </ol>
+              <img src="Images/url.png" alt="Search/URL" style="width:100%; border-radius:3px; border:1px solid rgba(255,255,255,.1); margin-top:8px;">
+              <ol start="2">
+                <li>Click <b>Download Now</b></li>
+                <li>Select <b>Mac (.dmg)</b> in the drop down</li>
+              </ol>
+              <img src="Images/website.png" alt="Mac dmg download" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;">
+            </div>
+
+            <div class="step">
+              <h3>Install the App <span class="badge important">Don’t skip</span></h3>
+              <ol>
+                <li>Open the downloaded <b>.dmg</b></li>
+                <li><b>Drag Mersive installer to Applications(which we usually do when installing any kind of application)</b></li>
+                <li>Open the Mersive app → <b>Next</b> → <b>Accept</b> → <b>Allow</b> until finished</li>
+              </ol>
+            </div>
+            <div class="step"><h3>Allow Screen Recording <span class="badge required">If prompted</span></h3> <div class="step-desc"> If the Mersive app asks for permissions, allow them so screen sharing works. </div> <ol> <li>System Settings → <b>Privacy & Security</b></li> <li><b>Screen & System Audio Recording</b> → enable <b>Mersive</b></li> <li>Quit & reopen the Mersive app if asked</li> </ol> <img src="Images/MAC.png" alt="Mac Screen Recording permission" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.1); margin-top:20px;"> </div></div>
+                
+            <div class="success">
+              After this one-time setup, share using <b>AirPlay</b> from Control Center 🎉
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MOBILE VIEW -->
+<div id="mobile-view" class="content">
+  <button class="back-btn" onclick="showHome()">← Back to Home</button>
+
+  <!-- Panic Path -->
+  <div class="panic">
+    <div class="panic-title">Fastest way to share from a phone/tablet</div>
+    <div class="panic-steps">
+      <div class="panic-step"><b>1)</b> Install <b>Mersive Solstice</b> app</div>
+      <div class="panic-step"><b>2)</b> Open app → enter <b>Room IP</b></div>
+      <div class="panic-step"><b>3)</b> Enter the <b>4-digit screen key</b></div>
+      <div class="panic-step"><b>4)</b> Tap <b>Share Screen</b></div>
+    </div>
+    <div class="panic-note">Make sure your phone/tablet is on <b>UC_Secure</b> Wi-Fi.</div>
+  </div>
+
+  <div class="card">
+
+    <!-- PHASE 1: iOS -->
+    <div class="phase-section" data-phase="ios">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-title-wrap">
+          <div class="phase-number install">1</div>
+          <div class="phase-title">iPhone / iPad (iOS)</div>
+        </div>
+        <div class="phase-arrow">▼</div>
+      </div>
+
+      <div class="phase-content">
+        <div class="step">
+          <h3>Install Mersive Solstice <span class="badge required">One time</span></h3>
+          <ol>
+            <li>Open the <b>App Store</b></li>
+            <li>Search for <b>Mersive Solstice</b></li>
+            <li>Install the app</li>
+          </ol>
+
+          <!-- Screenshot placeholder -->
+          <img src="Images/applogo.jpeg" alt="iOS App Store - Mersive Solstice" class="img-zoom-out">
+        </div>
+
+        <div class="step">
+          <h3>Connect to the room</h3>
+          <ol>
+            <li>Open the <b>Mersive Solstice</b> app</li>
+            <li>You’ll see a <b>search bar</b></li>
+            <li>Enter the <b>Room IP</b> shown on the classroom display</li>
+            <li>Enter the <b>4-digit screen key</b> shown on the classroom display</li>
+          </ol>
+
+          <!-- Screenshot placeholder -->
+          <img src="Images/APPUI.jpeg" alt="iOS - Enter Room IP" class="img-zoom-out">
+        </div>
+
+        <div class="step">
+          <h3>Share your screen <span class="badge recommended">Fast</span></h3>
+          <ol>
+            <li>Go to <b>Control Centre</b> and look for classroom display name(Ex: Proctor_432) and start airplay or you can share inside the app too.</li>
+            <li>If iOS asks permissions, tap <b>Allow</b></li>
+            <li>Your screen will appear on the classroom display</li>
+          </ol>
+
+          <!-- Screenshot placeholder -->
+          <img src="Images/SHARE.PNG" alt="iOS - Share Screen button"  class="img-zoom-out">
+
+          <div class="warning">
+            If your screen doesn’t show: close the app, reopen it, and connect again using the IP + 4-digit key.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2: Android -->
+    <div class="phase-section" data-phase="android">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-title-wrap">
+          <div class="phase-number config">2</div>
+          <div class="phase-title">Android phone / tablet</div>
+        </div>
+        <div class="phase-arrow">▼</div>
+      </div>
+
+      <div class="phase-content">
+        <div class="step">
+          <h3>Install Mersive Solstice <span class="badge required">One time</span></h3>
+          <ol>
+            <li>Open the <b>Google Play Store</b></li>
+            <li>Search for <b>Mersive Solstice</b></li>
+            <li>Install the app</li>
+          </ol>
+
+          <!-- Screenshot placeholder -->
+        </div>
+
+        <div class="step">
+          <h3>Connect (IP + 4-digit key)</h3>
+          <ol>
+            <li>Open the <b>Mersive Solstice</b> app</li>
+            <li>Enter the <b>Room IP</b></li>
+            <li>Enter the <b>4-digit screen key</b></li>
+            <li>Tap <b>Connect</b></li>
+          </ol>
+
+          <!-- Screenshot placeholder -->
+        </div>
+
+        <div class="step">
+          <h3>Share your screen</h3>
+          <ol>
+            <li>Tap <b>Share Screen</b></li>
+            <li>If Android asks permission, tap <b>Allow</b></li>
+            <li>Start presenting</li>
+          </ol>
+
+          <!-- Screenshot placeholder -->
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3: Mobile troubleshooting -->
+    <div class="phase-section" data-phase="mobilehelp">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-title-wrap">
+          <div class="phase-number share">3</div>
+          <div class="phase-title">Mobile troubleshooting</div>
+        </div>
+        <div class="phase-arrow">▼</div>
+      </div>
+
+      <div class="phase-content">
+        <div class="step">
+          <h3>Common fixes</h3>
+          <ol>
+            <li>Make sure you’re on <b>UC_Secure</b> Wi-Fi (not UC_Guest / cellular)</li>
+            <li>Re-enter the <b>Room IP</b> carefully (example: <span class="kbd">10.x.x.x</span>)</li>
+            <li>The <b>4-digit screen key changes</b> — always use the current one shown on the classroom display</li>
+            <li>Close and reopen the app, then connect again</li>
+          </ol>
+
+          <div class="success">
+            If you can connect (IP + key), sharing usually works instantly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- PPT VIEW -->
+<div id="ppt-view" class="content">
+  <button class="back-btn" onclick="showHome()">← Back to Home</button>
+
+  <div class="card">
+    <h2 style="font-size:26px;font-weight:900;margin-bottom:16px;">📊 Present PowerPoint</h2>
+
+    <div class="step">
+      <h3>🍎 Mac (Presentation on screen, notes on laptop)</h3>
+      <ol>
+        <li><b>Open the Mersive Solstice app</b></li>
+        <li>Enter <b>Room IP</b> + <b>4-digit key</b></li>
+        <li><b>Minimize</b> the Mersive app</li>
+        <li>Open <b>Control Center</b></li>
+        <li><b>Screen Mirroring / AirPlay</b></li>
+        <li>Select the <b>classroom display</b></li>
+        <li><b>Choose Extend Display</b> <span class="badge required">Do NOT select specific app window option. Choose either mirror or extend.</span></li>
+        <li>Open <b>PowerPoint</b></li>
+        <li>Slide Show → <b>Presenter View</b></li>
+      </ol>
+
+      <div class="danger">
+         It can show your notes to the class.
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>🪟 Windows</h3>
+      <ol>
+        <li>Open <b>Mersive</b> → enter <b>Room IP</b> + <b>4-digit key</b></li>
+        <li>Make sure you did this already it's a one-time step:
+            Settings → Control → turn <b>Extended Presentation Mode</b> ON</li>
+                      <img src="Images/EP.png" alt="Extended Presentation Mode toggle" class="img-zoom-out">
+
+        <li>You can start sharing via Desktop or App and start presenting.
+
+            The notes will be on your laptop and the presentation will be on the classroom screen.
+        </b></li>
+        <li>PowerPoint → Slide Show → <b>Use Presenter View</b></li>
+      </ol>
+    </div>
+  </div>
+</div>
+</div>
+  <script src="script.js"></script>
+
+</body>
+</html>
