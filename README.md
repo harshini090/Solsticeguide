@@ -14,7 +14,7 @@
   - Faculty were confused, especially during live classes
   - Existing documentation was either missing or not user-friendly
 
-  That’s where this project began.
+  That’s where this project began. BTW.. I'm a student worker(Classroom Technology Assistant).
 
   ------
 
